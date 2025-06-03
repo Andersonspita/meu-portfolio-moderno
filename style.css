@@ -1,0 +1,682 @@
+/* Reset Básico e Variáveis de Cor */
+:root {
+    --primary-color: #0077B6; /* Azul Profundo */
+    --primary-color-darker: #005A8D;
+    --accent-color: #FF6700; /* Laranja Vibrante */
+    --accent-color-darker: #E65100;
+    --text-color-dark: #333333; /* Cinza Escuro */
+    --text-color-light: #F4F7F6; /* Cinza Claro (quase branco) */
+    --text-color-on-dark-bg: #FFFFFF;
+    --bg-light: #F4F7F6;
+    --bg-white: #FFFFFF;
+    --header-footer-bg: #222831; /* Grafite */
+    --border-color: #DDDDDD;
+
+    --font-primary: 'Arial', sans-serif; /* Mude para uma fonte mais estilizada como Calibre, Inter, San Francisco etc. */
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; /* Para números e detalhes */
+
+    --header-height: 80px;
+    --section-padding: 100px; /* Espaçamento vertical para seções */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    font-family: var(--font-mono);
+}
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+.btn.resume-button, .btn.contact-button, .btn.hero-cta  {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+.btn.resume-button:hover, .btn.contact-button:hover, .btn.hero-cta:hover {
+    background-color: rgba(255, 103, 0, 0.1); /* Laranja com opacidade */
+    transform: translateY(-2px);
+}
+
+
+/* Links Sociais Fixos */
+.social-links-left, .email-link-right {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+.social-links-left {
+    left: 40px;
+}
+.email-link-right {
+    right: 40px;
+}
+.social-links-left a, .email-link-right a {
+    font-size: 1.2rem; /* Tamanho do ícone/texto */
+    color: var(--text-color-dark);
+    padding: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-links-left a:hover, .email-link-right a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+.email-link-right a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl; /* Gira o texto do email */
+}
+.social-links-left .line, .email-link-right .line {
+    width: 1px;
+    height: 90px;
+    background-color: var(--text-color-dark);
+    margin-top: 10px;
+}
+
+/* Cabeçalho Principal */
+#main-header {
+    position: fixed; /* Ou 'sticky' se preferir */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(34, 40, 49, 0.85); /* Grafite com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    z-index: 999;
+    transition: top 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+}
+#main-header.scrolled { /* Classe adicionada via JS */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Navegação Principal */
+#main-nav ul {
+    display: flex;
+    align-items: center;
+}
+#main-nav ul li {
+    margin-left: 25px;
+}
+#main-nav ul li a {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--text-color-on-dark-bg);
+    padding: 5px 0;
+}
+#main-nav ul li a:hover, #main-nav ul li a.active { /* 'active' classe via JS */
+    color: var(--accent-color);
+}
+.nav-number {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+#mobile-menu-toggle { /* Estilização básica para o botão do menu mobile */
+    display: none; /* Escondido em telas maiores */
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Seção Hero */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    min-height: 100vh; /* Altura total da viewport */
+    padding-top: var(--header-height); /* Compensa o cabeçalho fixo */
+    background-color: var(--bg-light); /* Pode ser uma imagem ou gradiente depois */
+}
+.hero-section .container {
+    max-width: 1000px; /* Um pouco mais largo para o hero */
+}
+.hero-intro {
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+.hero-name {
+    font-size: clamp(40px, 8vw, 80px); /* Tamanho de fonte responsivo */
+    font-weight: 700;
+    color: var(--text-color-dark); /* Cor forte para o nome */
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+.hero-tagline {
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 700;
+    color: #555; /* Um cinza um pouco mais claro que o nome */
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+.hero-bio {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+/* Estilo para cursor de digitação (do código anterior) */
+.hero-name::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+    font-weight: normal; /* Manter o peso normal do cursor */
+    color: var(--text-color-dark);
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Seções de Conteúdo Genéricas */
+.content-section {
+    padding: var(--section-padding) 0;
+}
+.content-section .container {
+    max-width: 900px; /* Conteúdo mais centralizado e legível */
+}
+.section-title {
+    font-family: var(--font-primary);
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin-bottom: 40px;
+    display: flex; /* Para alinhar o número com o texto e a linha */
+    align-items: center;
+    white-space: nowrap; /* Impede que o título quebre antes da linha */
+}
+.section-number {
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    font-size: 0.8em; /* Um pouco menor que o título */
+    margin-right: 10px;
+    font-weight: normal;
+}
+.section-title::after { /* Linha após o título, como no site de referência */
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Ou ajuste conforme necessário */
+    height: 1px;
+    background-color: var(--border-color);
+    margin-left: 20px;
+}
+
+/* Seção Sobre Mim */
+.about-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Texto ocupa mais espaço */
+    gap: 50px;
+    align-items: flex-start;
+}
+.about-text p {
+    margin-bottom: 15px;
+    color: #454545;
+}
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    gap: 10px;
+    padding: 0;
+    margin-top: 20px;
+}
+.skills-list li {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+    padding-left: 20px;
+    position: relative;
+}
+.skills-list li::before {
+    content: '▹'; /* Estilo de marcador */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+.about-image {
+    position: relative;
+    max-width: 300px; /* Limita o tamanho da imagem */
+    margin: 0 auto; /* Centraliza se a coluna for maior */
+}
+.about-image img {
+    border-radius: 4px;
+    filter: grayscale(50%) contrast(1); /* Efeito sutil na imagem */
+    transition: filter 0.3s ease;
+}
+.about-image:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+.about-image .image-overlay { /* Borda estilizada */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    top: 15px;
+    left: 15px;
+    z-index: -1;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+.about-image:hover .image-overlay {
+    top: 10px;
+    left: 10px;
+}
+
+/* Seção Experiência (Abas) */
+.experience-tabs {
+    display: flex;
+    gap: 30px; /* Espaço entre a lista de abas e os painéis */
+    min-height: 340px; /* Altura mínima para evitar "pulos" de layout */
+}
+.tab-list {
+    display: flex;
+    flex-direction: column; /* Abas na vertical */
+    position: relative; /* Para a linha indicadora */
+}
+.tab-button {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-color-dark);
+    border-left: 2px solid var(--border-color); /* Linha base das abas */
+    width: 100%; /* Ocupar toda a largura disponível na coluna */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.tab-button:hover {
+    background-color: rgba(0, 119, 182, 0.1); /* Azul com opacidade */
+    color: var(--primary-color);
+}
+.tab-button.active {
+    color: var(--accent-color);
+    background-color: rgba(255, 103, 0, 0.05); /* Laranja bem sutil */
+    border-left-color: var(--accent-color); /* Linha ativa */
+}
+.tab-panels {
+    flex-grow: 1; /* Painel ocupa o resto do espaço */
+}
+.tab-panel {
+    display: none; /* Esconde por padrão */
+    padding: 5px; /* Pequeno padding interno */
+}
+.tab-panel.active {
+    display: block; /* Mostra o painel ativo */
+}
+.tab-panel h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.tab-panel h3 .text-primary { /* Nome da empresa */
+    color: var(--primary-color); 
+}
+.tab-panel .experience-period {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.tab-panel ul {
+    list-style: none;
+}
+.tab-panel ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    color: #454545;
+}
+.tab-panel ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2em; /* Deixa o marcador um pouco maior */
+    line-height: 1;
+}
+
+/* Seção Projetos */
+.projects-grid {
+    display: grid;
+    gap: 70px; /* Espaçamento maior entre projetos */
+}
+.project-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Sistema de 12 colunas */
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px; /* Espaço abaixo de cada item de projeto */
+}
+.project-image {
+    grid-column: 1 / span 7; /* Ocupa 7 colunas à esquerda */
+    grid-row: 1 / -1; /* Ocupa todas as linhas */
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+}
+.project-image img {
+    filter: grayscale(60%) contrast(1) brightness(90%);
+    transition: filter 0.3s ease;
+}
+.project-image a:hover img {
+    filter: grayscale(0%) contrast(1) brightness(100%);
+}
+.project-image::after { /* Overlay sutil */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 119, 182, 0.2); /* Azul primário com opacidade */
+    mix-blend-mode: multiply; /* Efeito de cor interessante */
+    transition: background-color 0.3s ease;
+}
+.project-image a:hover::after {
+    background-color: transparent;
+}
+
+.project-content {
+    grid-column: 7 / -1; /* Ocupa da 7ª coluna até o final (direita) */
+    grid-row: 1 / -1;
+    text-align: right; /* Alinha texto à direita */
+    z-index: 2; /* Fica sobre a imagem */
+    padding: 20px;
+}
+/* Layout Invertido */
+.project-item-inverted .project-image {
+    grid-column: 6 / -1; /* Ocupa 7 colunas à direita */
+}
+.project-item-inverted .project-content {
+    grid-column: 1 / span 7; /* Ocupa da 1ª coluna até a 7ª (esquerda) */
+    text-align: left; /* Alinha texto à esquerda */
+}
+
+.project-overline {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+.project-title {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.project-title a {
+    color: var(--text-color-dark);
+}
+.project-title a:hover {
+    color: var(--primary-color);
+}
+.project-description {
+    background-color: var(--header-footer-bg); /* Fundo escuro para a descrição */
+    color: var(--text-color-light);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Alinha à direita */
+    gap: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+.project-item-inverted .project-tech-list {
+    justify-content: flex-start; /* Alinha à esquerda no invertido */
+}
+.project-links a {
+    font-size: 1.3rem;
+    color: var(--text-color-dark);
+    margin-left: 15px; /* Espaço entre ícones */
+}
+.project-item-inverted .project-links a {
+    margin-left: 0;
+    margin-right: 15px;
+}
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* Seção Contato */
+.contact-section {
+    background-color: var(--bg-white); /* Fundo branco para esta seção */
+}
+.contact-section .container.text-center {
+    max-width: 700px; /* Container mais estreito para o texto de contato */
+    text-align: center;
+}
+.contact-heading {
+    font-size: clamp(30px, 6vw, 50px);
+    color: var(--text-color-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.contact-text {
+    font-size: 1.1rem;
+    color: #454545;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Rodapé */
+#main-footer {
+    background-color: var(--header-footer-bg);
+    color: var(--text-color-light);
+    padding: 30px 0;
+    text-align: center;
+}
+.footer-social-links {
+    margin-bottom: 15px;
+}
+.footer-social-links a {
+    font-size: 1.3rem;
+    color: var(--text-color-light);
+    margin: 0 10px;
+}
+.footer-social-links a:hover {
+    color: var(--accent-color);
+}
+#main-footer p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+#main-footer p small {
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Animações de Scroll (do código anterior) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0.2s; /* Pequeno delay para escalonar animações */
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Delay para elementos filhos em uma seção */
+.animate-on-scroll.is-visible .hero-intro { transition-delay: 0.1s; }
+.animate-on-scroll.is-visible .hero-name { transition-delay: 0.2s; }
+.animate-on-scroll.is-visible .hero-tagline { transition-delay: 0.3s; }
+.animate-on-scroll.is-visible .hero-bio { transition-delay: 0.4s; }
+.animate-on-scroll.is-visible .hero-cta { transition-delay: 0.5s; }
+
+
+/* Responsividade */
+@media (max-width: 1080px) { /* Ajustes para tablets e telas menores */
+    .social-links-left, .email-link-right {
+        display: none; /* Esconde links laterais em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 80px;
+    }
+    #main-nav ul { /* Esconde navegação principal */
+        display: none;
+        /* Aqui viria a lógica para o menu hamburguer:
+           position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height));
+           background-color: var(--header-footer-bg); flex-direction: column; justify-content: center;
+        */
+    }
+    #main-nav ul.active { /* Classe para mostrar menu mobile */
+        display: flex; 
+        /* ... mais estilos para menu mobile aqui */
+    }
+    #mobile-menu-toggle {
+        display: block; /* Mostra o botão hamburguer */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Uma coluna */
+        gap: 30px;
+    }
+    .about-image {
+        grid-row: 1; /* Imagem primeiro em telas menores */
+        margin-bottom: 30px;
+    }
+
+    .experience-tabs {
+        flex-direction: column; /* Abas e painéis empilhados */
+    }
+    .tab-list {
+        flex-direction: row; /* Abas na horizontal em mobile */
+        overflow-x: auto; /* Permite rolar as abas se forem muitas */
+        border-left: none;
+        border-bottom: 2px solid var(--border-color); /* Linha abaixo das abas */
+    }
+    .tab-button {
+        border-left: none;
+        border-bottom: 2px solid transparent; /* Linha indicadora abaixo da aba ativa */
+        padding: 10px 15px;
+        white-space: nowrap; /* Impede que o texto da aba quebre */
+    }
+    .tab-button.active {
+        border-bottom-color: var(--accent-color);
+        border-left-color: transparent;
+    }
+
+    .project-item, .project-item-inverted {
+        grid-template-columns: 1fr; /* Uma coluna para projetos */
+    }
+    .project-image, .project-item-inverted .project-image {
+        grid-column: 1 / -1; /* Imagem ocupa toda a largura */
+        height: 250px; /* Altura fixa para imagem em mobile */
+    }
+    .project-image img {
+        object-fit: cover;
+        height: 100%;
+    }
+    .project-content, .project-item-inverted .project-content {
+        grid-column: 1 / -1;
+        grid-row: 2; /* Conteúdo abaixo da imagem */
+        text-align: left; /* Sempre à esquerda em mobile */
+        padding: 20px 0 0 0; /* Ajuste de padding */
+    }
+    .project-description {
+        background-color: transparent; /* Sem fundo para descrição em mobile, para simplicidade */
+        color: var(--text-color-dark);
+        padding: 0;
+        box-shadow: none;
+    }
+    .project-tech-list, .project-item-inverted .project-tech-list {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .project-links a, .project-item-inverted .project-links a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}

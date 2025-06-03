@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Pita - Desenvolvedor(a) Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="social-links-left">
+        <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/seu-usuario" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/seu-usuario" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="line"></div>
+    </div>
+
+    <div class="email-link-right">
+        <a href="mailto:seuemail@exemplo.com">andersonspita@hotmail.com.br</a>
+        <div class="line"></div>
+    </div>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="#" class="logo">AP</a> <nav id="main-nav">
+                <ul>
+                    <li><a href="#about" class="nav-link"><span class="nav-number">01.</span> Sobre</a></li>
+                    <li><a href="#experience" class="nav-link"><span class="nav-number">02.</span> Experiência</a></li>
+                    <li><a href="#projects" class="nav-link"><span class="nav-number">03.</span> Projetos</a></li>
+                    <li><a href="#contact" class="nav-link"><span class="nav-number">04.</span> Contato</a></li>
+                    <li><a href="seu-curriculo.pdf" target="_blank" class="btn btn-small resume-button">Currículo</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section full-height-section">
+            <div class="container">
+                <p class="hero-intro animate-on-scroll">Olá, meu nome é</p>
+                <h1 class="hero-name animate-on-scroll" data-text="anderson-pita.">Anderson Pita.</h1>
+                <h2 class="hero-tagline animate-on-scroll">Eu construo coisas para a web.</h2>
+                <p class="hero-bio animate-on-scroll">
+                    Sou um(a) desenvolvedor(a) web front-end, analista de dados, DEV Maker apaixonado(a) por criar
+                    experiências digitais acessíveis e centradas no usuário. Atualmente, estou focado(a) em desenvolver excelentes soluções para você.
+                </p>
+                <a href="#projects" class="btn btn-large hero-cta animate-on-scroll">Veja meus projetos!</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title"><span class="section-number">01.</span> Sobre Mim</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Olá! Meu nome é Anderson Pita e eu adoro criar coisas que vivem na internet. Meu interesse por desenvolvimento web começou em 2008 quando decidi tentar editar temas customizados de wordpress — o que me ensinou muito sobre HTML & CSS!</p>
+                        <p>Avançando para hoje, tive o privilégio de trabalhar em vários projetos como freela. Meu foco principal atualmente é construir produtos acessíveis e inclusivos e experiências digitais para uma variedade de clientes.</p>
+                        <p>Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:</p>
+                        <ul class="skills-list">
+                            <li>JavaScript (ES6+)</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>HTML & CSS</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/perfil.jpg" alt="Foto de Anderson">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title"><span class="section-number">02.</span> Onde Trabalhei</h2>
+                <div class="experience-tabs">
+                    <ul class="tab-list" role="tablist">
+                        <li role="presentation"><button id="tab-empresa2" role="tab" aria-selected="false" aria-controls="panel-empresa2" class="tab-button">Atento S/A</button></li>
+                        <li role="presentation"><button id="tab-empresa3" role="tab" aria-selected="false" aria-controls="panel-empresa3" class="tab-button">Sudoeste Informática Eirelle</button></li>
+                    </ul>
+                    <div class="tab-panels">
+                        <div id="panel-empresa1" role="tabpanel" tabindex="0" aria-labelledby="tab-empresa1" class="tab-panel active">
+                            <h3>Analista Programador Junior<span class="text-primary">Sudoeste Informática Eirelle</button></li>
+                            </ul></span></h3>
+                            <p class="experience-period">Dezembro 2021 - Presente</p>
+                            <ul>
+                                <li>Desenvolvi e mantive interfaces de usuário responsivas e interativas usando Maker NO Code e SQL para análise de Dados.</li>
+                                <li>Colaborei para desenvolver Portal de Transparência Municipal.</li>
+                                <li>Otimizei formulários e melhorei design dentro das limitações do sistema Maker NO Code.</li>
+                                <li>Desenvolvi relatórios com análise de dados para facilitar o entendimento dos usuários.</li>
+                            </ul>
+                        </div>
+                        <div id="panel-empresa3" role="tabpanel" tabindex="0" aria-labelledby="tab-empresa3" class="tab-panel">
+                            <h3>Freelancer Web Developer <span class="text-primary">@ Autônomo</span></h3>
+                            <p class="experience-period">Junho 2020 - Presente</p>
+                            <ul>
+                                <li>Criei websites customizados para pequenos negócios usando HTML, CSS, JavaScript e WordPress.</li>
+                                <li>Gerenciei comunicação com clientes, desde o levantamento de requisitos até a entrega final.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title"><span class="section-number">03.</span> Algumas Coisas que Construí</h2>
+                <div class="projects-grid">
+                    <div class="project-item animate-on-scroll">
+                        <div class="project-image">
+                            <a href="#" target="_blank"><img src="images/trp.png" alt="Nome do Projeto 1"></a>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-overline">Projeto em Destaque</p>
+                            <h3 class="project-title"><a href="#" target="_blank">Portal de Transparência Pública</a></h3>
+                            <div class="project-description">
+                                <p>Uma breve descrição do projeto, falando sobre seu propósito, os desafios enfrentados e as soluções implementadas. Tente manter conciso mas informativo.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>Maker No Code</li>
+                                <li>CSS</li>
+                                <li>SQL-Server</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://transparencia-pmpa.sistemasonline.net.br/webrun5/form.jsp?sys=PTP&action=openform&formID=20&dataConnection=PM_Paulo_Afonso&numerotc=292" target="_blank" aria-label="External Link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item project-item-inverted animate-on-scroll">
+                        <div class="project-image">
+                             <a href="#" target="_blank"><img src="placeholder-projeto.png" alt="Nome do Projeto 2"></a>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-overline">Projeto Pessoal</p>
+                            <h3 class="project-title"><a href="#" target="_blank">Outro Projeto Incrível 2</a></h3>
+                            <div class="project-description">
+                                <p>Mais uma descrição de um projeto fantástico. Detalhe as tecnologias e o que você aprendeu. Use este espaço para mostrar suas habilidades.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>Vue.js</li>
+                                <li>Firebase</li>
+                                <li>Tailwind CSS</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" aria-label="External Link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="project-item animate-on-scroll">
+                        <div class="project-image">
+                            <a href="#" target="_blank"><img src="placeholder-projeto.png" alt="Nome do Projeto 3"></a>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-overline">App Web</p>
+                            <h3 class="project-title"><a href="#" target="_blank">Plataforma Inovadora 3</a></h3>
+                            <div class="project-description">
+                                <p>Este projeto resolveu um problema X utilizando Y. Foi desenvolvido com foco em performance e usabilidade, e me permitiu aprofundar em Z.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>JavaScript Puro</li>
+                                <li>API Rest</li>
+                                <li>SASS</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" aria-label="External Link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section animate-on-scroll">
+            <div class="container text-center">
+                <h2 class="section-title"><span class="section-number">04.</span> Qual o Próximo Passo?</h2>
+                <h3 class="contact-heading">Entre em Contato</h3>
+                <p class="contact-text">
+                    Estou sempre aberto a novas oportunidades e colaborações. Se você tem um projeto em mente, uma pergunta,
+                    ou apenas quer dizer oi, minha caixa de entrada está sempre aberta. Farei o meu melhor para responder o mais rápido possível!
+                </p>
+                <a href="mailto:andersonspita@hotmail.com.br" class="btn btn-large contact-button">Diga Olá</a>
+                </br></br>
+                <p class="contact-text">
+                    Se preferir me chama no whatsapp para informações mais detalhadas.
+                </p>
+                <a class="btn btn-large contact-button" href="https://web.whatsapp.com/send?phone=5571993570954" target="_blank">Vamos Conversar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container text-center">
+            <div class="footer-social-links">
+                <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/seu-usuario" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/seu-usuario" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>Criado por Anderson Pita &copy; <span id="current-year">2025</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
